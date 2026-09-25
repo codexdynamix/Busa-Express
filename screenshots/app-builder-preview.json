@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Busa Express",
+      "hasCanvas": false,
+      "bodyTextLen": 8105,
+      "bodyTextHash": "fea6a370eb8038bb21e4c1afe5ea3ca0ee20c3ebb365593f5496813d99b325d8",
+      "bodyTextPrefix": "Busa Express Bookings Live Tracking Fleet & Cabin Timetables Cha",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Busa Express",
+      "hasCanvas": false,
+      "bodyTextLen": 8020,
+      "bodyTextHash": "b83ced39939509441ce1d50fd4efdb661e3a9baa0727d941d0c99a2824738af2",
+      "bodyTextPrefix": "Busa Express Book Coach Busachamone Integrated Services · SA ⇄ Z",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

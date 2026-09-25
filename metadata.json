@@ -1,0 +1,8 @@
+{
+  "name": "Busa Express",
+  "description": "Cross-border luxury coach travel between South Africa and Zimbabwe with live GPS tracking, seat selection, and executive bookings.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
