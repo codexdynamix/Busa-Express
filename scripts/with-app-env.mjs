@@ -111,6 +111,9 @@ function main(argv) {
     process.exit(2);
   }
   const env = mergeAppEnv(readAppEnv(projectRoot()), process.env);
+  if ((args.includes("build") || command === "build") && !env.NODE_ENV) {
+    env.NODE_ENV = "production";
+  }
   const child = spawn(command, args, { stdio: "inherit", env });
   // The dev server is long-running and is stopped by signalling this wrapper.
   for (const signal of ["SIGINT", "SIGTERM", "SIGHUP"]) {

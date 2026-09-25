@@ -1,17 +1,33 @@
-name: Deploy Meba Dental Clinic to Hostinger
+name: Deploy Busa Express to Hostinger
 
 on:
   push:
     branches:
       - main
+      - master
+  workflow_dispatch:
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static site
+        run: npm run build
+        env:
+          NODE_ENV: production
 
       - name: Deploy website to Hostinger
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
@@ -19,4 +35,7 @@ jobs:
           server: ${{ secrets.HOSTINGER_HOST }}
           username: ${{ secrets.HOSTINGER_USERNAME }}
           password: ${{ secrets.HOSTINGER_PASSWORD }}
-          server-dir: ./
+          port: ${{ secrets.HOSTINGER_PORT || 21 }}
+          protocol: ${{ secrets.HOSTINGER_PROTOCOL || 'ftp' }}
+          server-dir: ${{ secrets.HOSTINGER_SERVER_DIR || './' }}
+          local-dir: ./dist/
